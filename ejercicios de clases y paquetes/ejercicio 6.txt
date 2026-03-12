@@ -1,0 +1,27 @@
+classDiagram
+    class Empresa {
+        +String nombre
+        +String cif
+    }
+
+    class Departamento {
+        -int codigo
+        -String denominacion
+        -String localidad
+        +recuentoEmpleados() int
+    }
+
+    class Empleado {
+        -int codigo
+        -String nombre
+        -String categoria
+        -double salario
+        -int anioContratacion
+        +contratar() void
+        +despedir() void
+        +calcularSueldoMes() double
+    }
+
+    Empresa "1" *-- "1..*" Departamento : se divide en
+    Departamento "1" o-- "1..*" Empleado : formado por
+    Empleado "1" <-- "0..*" Empleado : es jefe de / tiene jefe

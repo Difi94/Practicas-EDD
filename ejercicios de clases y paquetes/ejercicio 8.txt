@@ -1,0 +1,73 @@
++----------------+
+|    Persona     |  <<abstract>>
++----------------+
+| - NIF: NIF     |
+| - nombre: String |
+| - fechaNacimiento: Fecha |
++----------------+
+        ^
+        |
+  ----------------
+  |              |
++--------+    +--------+
+| Socio  |    | Monitor|
++--------+    +--------+
+| - codigoAsociado: String |
+| - fechaAlta: Fecha       |
+| - fechaBaja: Fecha?     |
+| - actividadesApuntadas: List<Actividad> |
++----------------------------+
+| + apuntarse(Actividad)    |
+| + darseBaja()             |
+| + listarActividades()     |
+| + contarActividades()     |
++----------------------------+
+
+|----------------------------|
+| Monitor                    |
+| - tipoActividad: String    |
+| - titulacion: String       |
+| - actividadesAsignadas: List<Actividad> |
+|----------------------------|
+| + contratar()             |
+| + despedir()              |
+| + asignarActividad(Actividad) |
+| + eliminarDeActividad(Actividad) |
++----------------------------+
+
++----------------+
+|  Actividad     |
++----------------+
+| - denominacion: String    |
+| - fechaInicio: Fecha      |
+| - fechaFin: Fecha         |
+| - tramosHorarios: List<TramoHorario> |
+| - monitores: List<Monitor> |
+| - sociosApuntados: List<Socio> |
++----------------+
+| + añadirTramo(TramoHorario) |
+| + eliminarTramo(TramoHorario)|
+| + listarSocios()           |
+| + contarSocios()           |
++----------------+
+
++----------------+
+| TramoHorario   |
++----------------+
+| - diaSemana: int   |
+| - horaInicio: Hora |
+| - horaFin: Hora    |
++----------------+
+| + actividadesEnTramo(): List<Actividad> |
++----------------+
+
++--------+       +------+
+| Fecha  |       | NIF  |
++--------+       +------+
+| - dia  |       | - DNI: int |
+| - mes  |       | - letra: char |
+| - año  |       +--------------+
++--------+       | + calcularLetra() |
+| + mesesTranscurridos(Fecha) |
+| + fechaPosterior(int meses)|
++-----------------------------+

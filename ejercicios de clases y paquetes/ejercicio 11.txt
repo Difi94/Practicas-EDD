@@ -1,0 +1,48 @@
++----------------+
+| Cliente        |
++----------------+
+| - codigoCliente: String |
+| - nombre: String        |
+| - telefono: String      |
+| - direccion: String     |
+| - reservas: List<Reserva> |
++----------------+
+
++----------------+
+| Viaje          |
++----------------+
+| - codigoViaje: String   |
+| - nombre: String        |
+| - plazas: int           |
+| - precio: float         |
+| - fechas: List<FechaViaje> |
+| - reservas: List<Reserva>  |
++----------------+
+
++----------------+
+| Reserva        |
++----------------+
+| - numeroReserva: String |
+| - estado: String        |
+| - cliente: Cliente      |
+| - viaje: Viaje          |
++----------------+
+
++----------------+
+| FechaViaje     |
++----------------+
+| - fechaInicio: Fecha |
+| - fechaFin: Fecha    |
+| - viajes: List<Viaje> |
++----------------+
+
++----------------+
+| CatalogoViajes |
++----------------+
+| - codigo: String |
+| - destino: String |
+| - procedencia: String |
+| - temporada: String |
+| - precio: float |
+| - viajesCreados: List<Viaje> |
++----------------+

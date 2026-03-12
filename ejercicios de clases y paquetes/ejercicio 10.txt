@@ -1,0 +1,23 @@
+Paquete: entidad
+  - Empleado
+    - idEmpleado: String
+    - nombre: String
+    - fechaNacimiento: Fecha
+    - departamento: Departamento
+  - Departamento
+    - idDepartamento: String
+    - nombre: String
+    - empleados: List<Empleado>
+
+Paquete: control
+  - ControlEmpleado
+    - CRUD Empleado
+  - ControlDepartamento
+    - CRUD Departamento
+
+Paquete: interfaz
+  - VentanaLogin
+  - PanelPrincipal
+  - PanelMantenimientoEmpleados : PanelPrincipal
+  - PanelMantenimientoDepartamentos : PanelPrincipal
+  - PanelInformes : PanelPrincipal

@@ -1,0 +1,46 @@
++----------------+
+|   Cliente      | <<abstract>>
++----------------+
+| - codigoCliente: String |
+| - nombre: String        |
+| - telefono: String      |
+| - direccion: String     |
+| - facturas: List<Factura> |
++----------------+
+
+        ^
+        |
+  ----------------
+  |              |
++---------+    +-----------+
+| Empresa |    | Particular|
++---------+    +-----------+
+| - CIF: String       |   | - porcentajeDescuento: float |
+| - razonSocial: String|
++--------------------+ +-----------------------------+
+
++----------------+
+| Articulo       |
++----------------+
+| - codigoArticulo: String |
+| - denominacion: String   |
+| - pvp: float             |
+| - stock: int             |
++----------------+
+
++----------------+
+| Factura        |
++----------------+
+| - numeroFactura: String |
+| - fecha: Fecha           |
+| - cliente: Cliente       |
+| - lineasFactura: List<LineaFactura> |
++----------------+
+
++----------------+
+| LineaFactura   |
++----------------+
+| - codigoLinea: String |
+| - articulo: Articulo  |
+| - unidades: int       |
++----------------+

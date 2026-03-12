@@ -1,0 +1,40 @@
+classDiagram
+    class Cliente {
+        -String codigo
+        -String dni
+        -String nombre
+        -String direccion
+        -String telefono
+    }
+    class Reserva {
+        -Date fechaInicio
+        -Date fechaFin
+        -double precioAlquiler
+        -int litrosGasolina
+        -boolean devuelto
+    }
+    class Garaje {
+        -String calle
+        -int numero
+        -String poblacion
+        -String codigoPostal
+    }
+    class Vehiculo {
+        -String matricula
+        -String modelo
+        -String color
+        -String marca
+    }
+    class Coche {
+        -String tipoCombustible
+    }
+    class Moto {
+        -int cilindrada
+    }
+
+    Cliente "1" -- "0..*" Reserva : realiza
+    Cliente "0..1" -- "0..*" Cliente : avala a
+    Reserva "0..*" -- "1" Vehiculo : involucra
+    Vehiculo "0..*" -- "1" Garaje : se guarda en
+    Vehiculo <|-- Coche
+    Vehiculo <|-- Moto
